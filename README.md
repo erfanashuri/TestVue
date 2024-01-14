@@ -1,6 +1,7 @@
 #  TestVue
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue.js-Vite.js project by [Erfan Ashuri](https://github.com/erfanashuri/).
+
 
 ## Recommended IDE Setup
 
