@@ -6,10 +6,14 @@ import Header from './components/header.vue';
 
 <template>
   <Header />
-
+  <div class="screen-show">
   <RouterView></RouterView>
+  </div>
+
 </template>
 
 <style scoped>
-  
+  .screen-show{
+    padding: 1rem;
+  }
 </style>
