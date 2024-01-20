@@ -1,14 +1,12 @@
 <template>
-    <h1>Posts</h1>
-    <p>
-        lorem ipsum lorem ipsum lorem ipsum.
-    </p>
+    <RouterView></RouterView>
 </template>
 <script setup>
 
+    
 </script>
 
-<style>
+<style scoped>
     h1{
         color:white !important;
     }

@@ -2,7 +2,9 @@
     
     <div class="card">
     <div class="card-header">
-        {{ user.name }}
+        <RouterLink :to="{ name:'UserId' , params:{id: user.id} }">
+            {{ user.name }}
+        </RouterLink>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Username : {{ user.username }}</li>

@@ -1,31 +1,27 @@
 <template>
-    <div v-if="route.params.id===undefined" class="users-screen">
+    <div class="user-screen">
      
     <div v-if="loading" class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
 
-    <userCardView v-else v-for="user in users" :key="user.id" :user="user" >
-    </userCardView>
-
+    <userCardView v-else :user="users" />
+    <RouterLink :to="{ name:'Users' }" type="button" class="btn btn-light">Users</RouterLink>
     </div>
-    <RouterView  v-else></RouterView>
 </template>
 <script setup>
     import axios from 'axios';
     import { ref } from 'vue';
     import userCardView from '../UsersPageComp/userCardView.vue';
-    import { useRoute } from 'vue-router';
-
+    import { RouterLink, useRoute } from 'vue-router';
 
     const users = ref([])
     const loading = ref(true)
     const route = useRoute();
-    console.log();
 
-    function getUsers(){
+    function getUser(){
         axios
-        .get('https://jsonplaceholder.typicode.com/users')
+        .get(`https://jsonplaceholder.typicode.com/users/${route.params.id}`)
         .then(function (response) {
             users.value = response.data;
             loading.value = false
@@ -35,13 +31,9 @@
         });  
     };
 
-    getUsers()
+    getUser()
 </script>
 
 <style scoped>
-    .users-screen{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
+
 </style>
