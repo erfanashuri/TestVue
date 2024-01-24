@@ -6,6 +6,7 @@ import UserShow from "../components/pages/UserShow.vue";
 import PostIndexVue from "../components/PostPageComp/PostIndex.vue";
 import PostSingleVue from "../components/PostPageComp/PostSingle.vue";
 import PostCreateVue from "../components/PostPageComp/PostCreate.vue";
+import PostEditVue from "../components/PostPageComp/PostEdit.vue";
 
 
 const router = createRouter({
@@ -18,7 +19,8 @@ const router = createRouter({
     { path:"/Posts" , name:"Posts" , component:Posts , children:[
       {path:"" , name:"PostIndex" , component:PostIndexVue},
       {path:":id" , name:"PostSingle" , component:PostSingleVue},
-      {path:"create" , name:"PostCreate" , component:PostCreateVue}
+      {path:"create" , name:"PostCreate" , component:PostCreateVue},
+      {path:"edit/:id" , name:"PostEdit" , component:PostEditVue}
     ] },
     ]
 });
